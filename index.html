@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Projekat - Nebojsa Markovic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header col-12 col-t-12">
+        <h1>ITBootcamp chat</h1>
+        <h3>Choose a chatroom</h4>
+    </div>
+    <div class="main col-12 col-t-12">
+
+        <!-- chat room names and buttons -->
+        <div class="rooms col-12 col-t-12">
+            <ul>
+                <button class="roomBtns col-3 col-t-3" id="general">#general</button>
+                <button class="roomBtns col-3 col-t-3" id="js">#js</button>
+                <button class="roomBtns col-3 col-t-3" id="homework">#homeworks</button>
+                <button class="roomBtns col-3 col-t-3" id="tests">#tests</button>
+            </ul>
+        </div>
+
+        <!-- place for messages -->
+        <div class="chat col-12 col-t-12">
+            <ul class="msgUl">
+
+            </ul>
+        </div>
+
+        <div class="inputs col-12 col-t-12">
+                    <!-- Forma za unos poruke -->
+            <div class="areaInput col-6 col-t-6">
+                <form id="formMessage">
+                    <textarea placeholder="Your message..." id="inputMessage" rows="3"></textarea>
+                    <input type="submit" value="Send" id="btnSend" class="btn">
+                </form>
+            </div>
+                
+            <div class="usernameInput col-6 col-t-6">
+                <!-- Forma za promenu korisničkog imena -->
+                <form id="formUsername">
+                    <input type="submit" value="Update" id="btnUpdate" class="btn">
+                    <input type="text" placeholder="Update username" id="inputUsername">
+                </form>
+            </div>
+        </div>
+        <div class="notificationOnUsernameChanged col-6 col-t-6">
+            Username
+        </div>
+        
+    </div>
+
+    
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBdP37Zs8pOMYAbdoJNBYpsD7Spw2aLjzs",
+    authDomain: "chat-project-a98f0.firebaseapp.com",
+    databaseURL: "https://chat-project-a98f0.firebaseio.com",
+    projectId: "chat-project-a98f0",
+    storageBucket: "chat-project-a98f0.appspot.com",
+    messagingSenderId: "520227322635",
+    appId: "1:520227322635:web:f9f89d1fcff3ca9ce8000e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  let db = firebase.firestore();
+</script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

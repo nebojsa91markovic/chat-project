@@ -1,0 +1,292 @@
+
+
+/*Podešavanja */
+
+* {
+    padding: 5px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/bg_aurora.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/*Mobile*/
+[class*="col-"] {
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    border: 2px inset black;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 3px;
+    color: white;
+    background-color: rgba(207, 240, 213, 0.2);
+}
+
+.main {
+    border: 2px inset white;
+    overflow: hidden;
+}
+
+#btnUpdate, #btnSend {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    background-color:rgba(70, 245, 99, 0.7);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+.roomBtns {
+    padding: 10px;
+    background-color: rgba(70, 245, 99, 0.7);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    width: 20%;
+    overflow: hidden;
+}
+
+.roomBtns:focus {
+    background-color: rgba(70, 184, 245, 0.7);
+}
+
+.roomBtns:hover {
+    cursor: pointer;
+    filter: brightness(2.00);
+    font-weight: bold;
+}
+
+.msgUl {
+    list-style: none;
+    height: 250px;
+    overflow: auto;
+    display: block;
+}
+
+.msgTemplate {
+    background-color: rgba(236, 245, 70, 0.7);
+    color: purple;
+    border-radius: 15px;
+    margin: 5px;
+    width: 50%;
+    display: inline-block;
+    overflow: auto;
+
+}
+
+.myMsgTemplate {
+    background-color: rgba(236, 245, 70, 0.7);
+    color: purple;
+    border-radius: 15px;
+    margin: 5px;
+    float: right !important;
+    width: 50%;
+    display: inline-block;
+    overflow: auto;
+}
+
+.msgUser {
+    font-weight: bold;
+}
+
+.msgText {
+    font-weight: 200;
+}
+
+.inputs {
+    display: block;
+    overflow: hidden;
+}
+
+.areaInput {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+
+}
+
+.usernameInput {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+
+}
+
+#inputMessage {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#inputUsername {
+    width: 70%;
+    float: right;
+    margin-right: 5px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.msgTime {
+    color: grey;
+}
+
+.notificationOnUsernameChanged {
+    background-color: rgba(173, 216, 230, 0.7);
+    text-align: center;
+    font-weight: bold;
+    color: grey;
+    margin-bottom: 0px !important;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border-radius: 15px;
+    display: none;
+}
+/*Table*/
+
+@media only screen and (min-width:650px){
+    [class*="col-"] {
+        float: left;
+    }
+
+    #inputUsername {
+        width: 60%;
+    }
+
+    .col-t-1 {
+        width: 8,33%;
+    }
+    
+    .col-t-2 {
+        width: 16,66%;
+    }
+    
+    .col-t-3 {
+        width: 25%;
+    }
+    
+    .col-t-4 {
+        width: 33.33%;
+    }
+    
+    .col-t-5 {
+        width: 41.66%;
+    }
+    
+    .col-t-6 {
+        width: 50%;
+    }
+    
+    .col-t-7 {
+        width: 58.33%;
+    }
+    
+    .col-t-8 {
+        width: 66.66%;
+    }
+    
+    .col-t-9 {
+        width: 75%;
+    }
+    
+    .col-t-10 {
+        width: 83.33%;
+    }
+    
+    .col-t-11 {
+        width: 91.66%;
+    }
+    
+    .col-t-12 {
+        width: 100%;
+    }
+    .msgTemplate {
+        background-color: rgba(236, 245, 70, 0.7);
+        color: purple;
+        border-radius: 15px;
+        margin: 5px;
+        width: 50%;
+    }
+    
+    .myMsgTemplate {
+        background-color: rgba(236, 245, 70, 0.7);
+        color: purple;
+        border-radius: 15px;
+        margin: 5px;
+        float: right !important;
+        width: 50%;
+    }
+}
+
+
+
+/*Desktop*/
+
+@media only screen and (min-width:950px){
+
+
+    /*Selektovanje svih elemenata koji imaju prefiks col-*/
+    [class*="col-"] {
+        float: left;
+    }
+    
+    .col-1 {
+        width: 8.33%;
+    }
+    
+    .col-2 {
+        width: 16.66%;
+    }
+    
+    .col-3 {
+        width: 25%;
+    }
+    
+    .col-4 {
+        width: 33.33%;
+    }
+    
+    .col-5 {
+        width: 41.66%;
+    }
+    
+    .col-6 {
+        width: 50%;
+    }
+    
+    .col-7 {
+        width: 58.33%;
+    }
+    
+    .col-8 {
+        width: 66.66%;
+    }
+    
+    .col-9 {
+        width: 75%;
+    }
+    
+    .col-10 {
+        width: 83.33%;
+    }
+    
+    .col-11 {
+        width: 91.66%;
+    }
+    
+    .col-12 {
+        width: 100%;
+    }
+}
+
