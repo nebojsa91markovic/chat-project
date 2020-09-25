@@ -5,6 +5,41 @@ import {ChatUI} from "./ui.js";
 let chatsDB = db.collection('chats');
 let rooms = document.querySelector('.rooms');
 let ul = document.querySelector('.msgUl');
+let colPicker = document.querySelector('input[type="color"]');
+let btnColPicker = document.querySelector('#btnUpdateColor');
+let btnSetDates = document.querySelector('#btnSetDates');
+
+
+let pageBckground = () => {
+    let userBckground = localStorage.getItem('chat_project_background');
+    if(userBckground == null || userBckground == '') {
+        localStorage.setItem('chat_project_background', '#ffffff');
+    }
+    let color = localStorage.getItem('chat_project_background');
+    colPicker.value = color;
+    document.body.style.backgroundColor = color;
+
+}
+pageBckground();
+
+btnColPicker.addEventListener('click', event => {
+    event.preventDefault();
+    localStorage.setItem('chat_project_background', colPicker.value);
+    pageBckground();
+});
+
+btnSetDates.addEventListener('click', event => {
+    event.preventDefault();
+    let chatShowStart = document.querySelector('#chatShowStart').value;
+    let chatShowEnd = document.querySelector('#chatShowEnd').value;
+    if(chatShowStart == '' || chatShowEnd == '') {
+        alert('You need to input valid time!');
+    }
+    else {
+        ulChatList.clear();
+        chatroom.getChatsDate(chatShowStart, chatShowEnd, data => {ulChatList.templateLI(data)} )
+    }
+});
 
 function checkUsername() {
     let getUsername = localStorage.getItem("chat_project_username");
@@ -48,6 +83,15 @@ function printRoom() {
 }
 
 
+ul.addEventListener('click', event => {
+    if(event.target.tagName === 'IMG') {
+       let id = event.target.parentElement.getAttribute('data-id');
+       event.target.parentElement.parentElement.removeChild(event.target.parentElement)
+       chatroom.delChat(id);
+    }
+})
+
+
 let btnSend = document.querySelector('#btnSend');
 let msg = document.querySelector('#inputMessage');
 msg.addEventListener('keyup', event => {
@@ -59,7 +103,6 @@ btnSend.addEventListener('click', event => {
     event.preventDefault();
     let msg = document.querySelector('#inputMessage').value;
     let msgTest =  msg.replace(/\s/g, '');
-    console.log(msgTest.length)
     if( msgTest.length != 0){
         chatroom.addChat(msg)
         .then( () => {document.querySelector('#inputMessage').value = ''})

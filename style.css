@@ -8,11 +8,15 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background-image: url('images/bg_aurora.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+} */
+
+body {
+    background-color: white;
 }
 
 /*Mobile*/
@@ -25,7 +29,7 @@ body {
     border: 2px inset black;
     background-color: rgba(0, 0, 0, 0.5);
     margin-bottom: 3px;
-    color: white;
+    color: Blue;
     background-color: rgba(207, 240, 213, 0.2);
 }
 
@@ -34,8 +38,8 @@ body {
     overflow: hidden;
 }
 
-#btnUpdate, #btnSend {
-    width: 100px;
+#btnUpdate, #btnSend, #btnUpdateColor, #btnSetDates {
+    width: 25%;
     height: 40px;
     font-size: 18px;
     background-color:rgba(70, 245, 99, 0.7);
@@ -108,31 +112,44 @@ body {
     overflow: hidden;
 }
 
-.areaInput {
-    width: 100%;
-    height: auto;
+.areaInput, .areaColorPicker, .areaDatePicker, .areaColorPicker {
     display: inline-block;
+}
 
+#chatShowStart, #chatShowEnd {
+    width: 35%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .usernameInput {
-    height: auto;
-    width: 100%;
     display: inline-block;
-
 }
 
 #inputMessage {
-    width: 100%;
+    width: 70%;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 15px;
     border-radius: 15px;
 }
 
+#colorPicker {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.trashcan {
+    float: right;
+    height: 10%;
+    width: 10%;
+    cursor: pointer;
+}
+
 #inputUsername {
     width: 70%;
-    float: right;
-    margin-right: 5px;
     padding: 15px;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -158,10 +175,6 @@ body {
 @media only screen and (min-width:650px){
     [class*="col-"] {
         float: left;
-    }
-
-    #inputUsername {
-        width: 60%;
     }
 
     .col-t-1 {

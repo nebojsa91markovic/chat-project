@@ -36,10 +36,7 @@ export class Chatroom {
             message: msg,
             create_at: firebase.firestore.Timestamp.fromDate(new Date())
         }
-        console.log(this.room)
         
-        // let response = await this.chat.add(docChat); 
-        // return response;
         this.chat.add(docChat)
         .then(() => {
             console.log('Chat sucessfully added!');
@@ -57,7 +54,27 @@ export class Chatroom {
             snapshot.docChanges().forEach(change => {
                 if(change.type == 'added'){
                     //update ceta (dadaj novu poruku na ekran)
-                    callback(change.doc.data());
+                    callback(change.doc);
+                }
+            })
+        });
+    }
+
+    getChatsDate(start, end, callback) {
+        let startDate = new Date(start);
+        let endDate = new Date(end);
+        startDate = firebase.firestore.Timestamp.fromDate(startDate)
+        endDate = firebase.firestore.Timestamp.fromDate(endDate)
+
+        this.unsub = this.chat
+        .where('room', '==', this.room)
+        .where('create_at', '>=', startDate)
+        .where('create_at', '<', endDate)
+        .orderBy('create_at')
+        .onSnapshot( snapshot => {
+            snapshot.docChanges().forEach(change => {
+                if(change.type == 'added'){
+                    callback(change.doc);
                 }
             })
         });
@@ -73,6 +90,33 @@ export class Chatroom {
         if(this.unsub()){
             this.unsub();
         };
+    }
+
+    async delChat(msg) {
+        let delLi = document.querySelectorAll(`[data-id="${msg}"]`);
+        
+        let doc = db.collection('chats').doc(`${msg}`);
+        doc.get()
+        .then(doc => {
+            if(doc.exists) {
+                let data = doc.data();
+                if(data.username == this.username){
+                    if(confirm("Do you really wish to delete this message!?")){
+                        db.collection('chats').doc(`${msg}`).delete()
+                        .then(() => {
+                            console.log('Task sucessfully deleted!');
+                        })
+                        .catch(error => {
+                            console.log(`Cannot delete task: ${error}`);
+                        })
+                    }
+                }
+            }
+            else {
+                console.log(`No document with id: ${doc.id}`);
+            }
+        })
+        .catch(err => console.log(err));
     }
 }
 

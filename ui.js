@@ -18,12 +18,13 @@ export class ChatUI {
     }
 
     templateLI(msg) {
+        let dataId = msg.id;
+        msg = msg.data();
         let li = document.createElement('li');
         let msgClass = 'msgTemplate col-6 col-t-6';
         if(msg.username == localStorage.getItem('chat_project_username')){
             msgClass = 'myMsgTemplate col-6 col-t-6';
         }
-
         li.className = msgClass;
         let p = document.createElement('p');
         p.className = 'msgUser';
@@ -35,9 +36,14 @@ export class ChatUI {
         span2.className = 'msgTime';
         span2.innerHTML = this.showTimeOfMsg(msg.create_at.toDate());
         
+        let trashcan = document.createElement('img');
+        trashcan.src = "images/trashcan.jpg";
+        trashcan.className = "trashcan";
+        li.setAttribute('data-id', dataId)
         p.appendChild(span1);
         li.appendChild(p);
         li.appendChild(span2);
+        li.appendChild(trashcan);
         this.chatui.appendChild(li);
         let chat = document.querySelector('.chat');
         chat.appendChild(this.chatui);
