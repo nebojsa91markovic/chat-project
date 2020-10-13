@@ -32,9 +32,19 @@
 
         <div class="inputs col-12 col-t-12">
                     <!-- Forma za unos poruke -->
-            <div class="areaColorPicker col-12 col-t-12">
-                <input type="color" name="" id="colorPicker">
-                <input type="submit" value="Update color" id="btnUpdateColor" class="btn">
+            <div class="areaInput col-12 col-t-12">
+                <form id="formMessage">
+                    <textarea placeholder="Your message..." id="inputMessage" class="col-9 col-t-9" rows="1"></textarea>
+                    <input type="submit" class="col-2 col-t-2" value="Send" id="btnSend" class="btn">
+                </form>
+            </div>
+
+            <div class="usernameInput col-12 col-t-12">
+                <!-- Forma za promenu korisničkog imena -->
+                <form id="formUsername">
+                    <input type="submit" class="col-2 col-t-2" value="Update" id="btnUpdate" class="btn">
+                    <input type="text" placeholder="Update username" id="inputUsername">
+                </form>
             </div>
 
             <div class="areaDatePicker col-12 col-t-12">
@@ -43,20 +53,11 @@
                 <input type="submit" class="col-2 col-t-2" value="Set dates" id="btnSetDates" class="btn">
             </div>
             
-            <div class="areaInput col-12 col-t-12">
-                <form id="formMessage">
-                    <textarea placeholder="Your message..." id="inputMessage" class="col-9 col-t-9" rows="1"></textarea>
-                    <input type="submit" class="col-2 col-t-2" value="Send" id="btnSend" class="btn">
-                </form>
+            <div class="areaColorPicker col-12 col-t-12">
+                <input type="color" name="" id="colorPicker">
+                <input type="submit" value="Update color" id="btnUpdateColor" class="btn">
             </div>
-                
-            <div class="usernameInput col-12 col-t-12">
-                <!-- Forma za promenu korisničkog imena -->
-                <form id="formUsername">
-                    <input type="submit" class="col-2 col-t-2" value="Update" id="btnUpdate" class="btn">
-                    <input type="text" placeholder="Update username" id="inputUsername">
-                </form>
-            </div>
+            
         </div>
         <div class="notificationOnUsernameChanged col-6 col-t-6">
             Username
