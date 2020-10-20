@@ -8,40 +8,30 @@ by your choice, and of course use your username.
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
-* [Inspiration](#inspiration)
 * [Contact](#contact)
 
 ## General info
-Pokemon memory game, build using Vanilla JavaScript and of course HTML and CSS. The game is fully responsive thoughout devices (i.e. desktop screen, tablet and phone) and Firefox, Chrome and Safari friendly (tested).
-Game was developed so you can play and compite with your friends, with score table
-saving your results in your local storage.
+Chat Rooms app, build using Vanilla JavaScript and of course HTML and CSS, and for database Firebase.
+You can use and change unique username, set background color, filter through the messages by date of your choosing
+The app is fully responsive thoughout devices (i.e. desktop screen, tablet and phone) and Firefox, Chrome and Safari friendly (tested).
 
 ## Screenshots
-![Example screenshot](./images/pokeball.png)
+![Example screenshot](https://user-images.githubusercontent.com/59211000/96642026-d7ca2900-1325-11eb-9a75-bbac1c156b24.png)
 
 ## Technologies
+* JavaScript
 * HTML5
 * CSS3
-* Vanilla JavaScript
-
-## Setup
-If you want to play this game offline, download project and double click on index.html file. You'll need some compression software as WinRar, WinZip, 7z etc.
-![Example screenshot](https://user-images.githubusercontent.com/59211000/96584696-e6412200-12de-11eb-9b99-602b4010a91c.png)
+* Firebase
 
 ## Features
 List of features ready and TODOs for future development
-* Develope points counter
 * Develope using some JS framework
 
 ## Status
-Project is finished as it was my first project like this.
-
-## Inspiration
-Images: Pokemon Icon Pack by [POKEMON](https://www.pokemon.com/us/)
-
+Project is finished as far as this version is concerned.
 
 ## Contact
 Created by [@Nebojsa Markovic](https://www.linkedin.com/in/nebojsa-markovic-6760111b5/) - feel free to contact me!
